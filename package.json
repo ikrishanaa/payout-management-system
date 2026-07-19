@@ -1,0 +1,22 @@
+{
+  "name": "payout-management-system",
+  "version": "1.0.0",
+  "description": "User Payout Management System for Affiliate Sales - LLD Implementation",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "seed": "node src/scripts/seed.js",
+    "test": "node --test src/tests/**/*.test.js",
+    "migrate": "node src/scripts/migrate.js"
+  },
+  "keywords": ["payout", "affiliate", "lld", "system-design"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "better-sqlite3": "^11.7.0",
+    "express": "^4.21.0",
+    "uuid": "^10.0.0"
+  },
+  "devDependencies": {}
+}
