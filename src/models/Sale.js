@@ -3,8 +3,6 @@
  * 
  * Encapsulates all data access for the `sales` table.
  * 
- * Design Notes:
- * - Uses prepared statements for performance and SQL injection prevention.
  * - The `advance_paid` flag is the key idempotency mechanism — once set to 1,
  *   the advance payout job will skip that sale on subsequent runs.
  */

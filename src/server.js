@@ -12,6 +12,7 @@
  *   /api/balance          — User balance & transaction history
  */
 
+const path = require('path');
 const express = require('express');
 const { migrate } = require('./scripts/migrate');
 const { closeDatabase } = require('./config/database');
@@ -29,6 +30,7 @@ const PORT = process.env.PORT || 3000;
 
 // ── Middleware ──
 app.use(express.json());
+app.use(express.static(path.join(__dirname, '..', 'public')));
 
 // Request logging
 app.use((req, res, next) => {
@@ -51,8 +53,8 @@ app.get('/health', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
 
-// ── API Documentation ──
-app.get('/', (req, res) => {
+// ── API Documentation (JSON) ──
+app.get('/api', (req, res) => {
   res.json({
     name: 'User Payout Management System',
     version: '1.0.0',
@@ -110,8 +112,9 @@ process.on('SIGTERM', () => {
 // ── Start Server ──
 app.listen(PORT, () => {
   console.log(`\n🚀 Payout Management System running on http://localhost:${PORT}`);
-  console.log(`📋 API docs: http://localhost:${PORT}/`);
-  console.log(`💚 Health:   http://localhost:${PORT}/health\n`);
+  console.log(`📋 Dashboard: http://localhost:${PORT}/`);
+  console.log(`📋 API docs:  http://localhost:${PORT}/api`);
+  console.log(`💚 Health:    http://localhost:${PORT}/health\n`);
 });
 
 module.exports = app;

@@ -1,12 +1,7 @@
 /**
  * Payout Model
  * 
- * Represents withdrawal requests. Tracks the full lifecycle:
- *   pending → completed
- *           → failed
- *           → cancelled
- *           → rejected
- * 
+ * Represents withdrawal requests. Tracks the full lifecycle: pending, completed, failed, cancelled, rejected.
  * Failed/cancelled/rejected payouts trigger a reversal (credit back to balance).
  */
 

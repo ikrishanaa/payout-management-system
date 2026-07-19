@@ -3,18 +3,8 @@
  * 
  * Manages the materialized balance for each user.
  * 
- * Design Decisions:
  * - We maintain a materialized balance (user_balances table) rather than 
- *   computing it from the transaction log on every read. This is a classic
- *   write-heavy vs read-heavy trade-off:
- *   
- *   ✅ Reads are O(1) — just fetch the row.
- *   ✅ Withdrawable balance is always up-to-date.
- *   ⚠️  Writes must update both the transaction log AND the balance.
- *   
- *   The transaction log (payout_transactions) serves as the source of truth
- *   for audit/debugging. The balance is the "cache" for fast reads.
- * 
+ *   computing it from the transaction log on every read for fast O(1) reads.
  * - `last_withdrawal_at` enforces the 24-hour withdrawal restriction.
  */
 

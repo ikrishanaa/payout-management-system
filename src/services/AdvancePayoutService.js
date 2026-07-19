@@ -3,17 +3,6 @@
  * 
  * Implements the advance payout job: credits 10% of earnings for eligible
  * pending sales to the user's withdrawable balance.
- * 
- * ╔═══════════════════════════════════════════════════════════════╗
- * ║  IDEMPOTENCY GUARANTEE                                       ║
- * ║                                                               ║
- * ║  Running this job multiple times is safe:                     ║
- * ║  1. Only fetches sales where advance_paid = 0                 ║
- * ║  2. markAdvancePaid() uses WHERE advance_paid = 0             ║
- * ║  3. If another process already marked it, changes = 0,        ║
- * ║     and we skip the credit.                                   ║
- * ║  This is a "check-and-set" pattern at the DB level.           ║
- * ╚═══════════════════════════════════════════════════════════════╝
  */
 
 const { getDatabase } = require('../config/database');

@@ -4,14 +4,6 @@
  * Immutable audit ledger. Every balance-affecting event creates a transaction record.
  * This is the system's source of truth — if the materialized balance ever drifts,
  * it can be recomputed from the transaction log.
- * 
- * Transaction Types:
- * ──────────────────
- * advance                — 10% advance payout credited for a pending sale
- * reconciliation_credit  — Remaining amount credited for an approved sale
- * reconciliation_debit   — Advance clawed back for a rejected sale
- * withdrawal             — User-initiated withdrawal (debit)
- * withdrawal_reversal    — Failed/cancelled payout credited back
  */
 
 const { getDatabase } = require('../config/database');

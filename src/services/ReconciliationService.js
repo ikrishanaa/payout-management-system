@@ -3,18 +3,6 @@
  * 
  * Handles the admin reconciliation workflow where pending sales are
  * updated to 'approved' or 'rejected', and final payouts are calculated.
- * 
- * ╔═══════════════════════════════════════════════════════════════╗
- * ║  FINAL PAYOUT LOGIC                                          ║
- * ║                                                               ║
- * ║  Approved Sale:                                               ║
- * ║    credit = earning - advance_amount                          ║
- * ║    (User gets the remaining 90% or whatever wasn't advanced)  ║
- * ║                                                               ║
- * ║  Rejected Sale:                                               ║
- * ║    debit = advance_amount                                     ║
- * ║    (User must return the 10% advance they already received)   ║
- * ╚═══════════════════════════════════════════════════════════════╝
  */
 
 const { getDatabase } = require('../config/database');

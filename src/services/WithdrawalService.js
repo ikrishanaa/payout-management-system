@@ -2,21 +2,6 @@
  * Withdrawal Service
  * 
  * Handles user withdrawal requests and failed payout recovery.
- * 
- * ╔═══════════════════════════════════════════════════════════════╗
- * ║  WITHDRAWAL RULES                                            ║
- * ║                                                               ║
- * ║  1. User must have sufficient withdrawable balance.           ║
- * ║  2. Only one withdrawal every 24 hours.                       ║
- * ║  3. Amount must be > 0.                                       ║
- * ║                                                               ║
- * ║  FAILED PAYOUT RECOVERY (Question 2)                          ║
- * ║                                                               ║
- * ║  If a payout fails/is cancelled/rejected:                     ║
- * ║  1. Credit the amount back to withdrawable balance.           ║
- * ║  2. Record a withdrawal_reversal transaction.                 ║
- * ║  3. User can withdraw again (subject to 24h rule).            ║
- * ╚═══════════════════════════════════════════════════════════════╝
  */
 
 const { getDatabase } = require('../config/database');

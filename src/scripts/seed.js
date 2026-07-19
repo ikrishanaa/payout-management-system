@@ -26,9 +26,9 @@ function seed() {
 
   // ── Insert Users ──
   const users = [
-    { id: 'john_doe',   name: 'John Doe',   email: 'john@example.com' },
-    { id: 'jane_smith', name: 'Jane Smith',  email: 'jane@example.com' },
-    { id: 'bob_kumar',  name: 'Bob Kumar',   email: 'bob@example.com' },
+    { id: 'aarav_sharma', name: 'Aarav Sharma', email: 'aarav@example.com' },
+    { id: 'priya_patel',  name: 'Priya Patel',  email: 'priya@example.com' },
+    { id: 'rohan_verma',  name: 'Rohan Verma',  email: 'rohan@example.com' },
   ];
 
   const insertUser = db.prepare(`
@@ -49,15 +49,15 @@ function seed() {
 
   // ── Insert Sales (matching the assignment example) ──
   const sales = [
-    // John's 3 sales from the assignment example
-    { userId: 'john_doe', brand: 'brand_1', earning: 40 },
-    { userId: 'john_doe', brand: 'brand_1', earning: 40 },
-    { userId: 'john_doe', brand: 'brand_1', earning: 40 },
+    // Aarav's 3 sales from the assignment example
+    { userId: 'aarav_sharma', brand: 'brand_1', earning: 40 },
+    { userId: 'aarav_sharma', brand: 'brand_1', earning: 40 },
+    { userId: 'aarav_sharma', brand: 'brand_1', earning: 40 },
     // Additional sales for other users
-    { userId: 'jane_smith', brand: 'brand_2', earning: 100 },
-    { userId: 'jane_smith', brand: 'brand_3', earning: 60 },
-    { userId: 'bob_kumar',  brand: 'brand_1', earning: 200 },
-    { userId: 'bob_kumar',  brand: 'brand_2', earning: 150 },
+    { userId: 'priya_patel', brand: 'brand_2', earning: 100 },
+    { userId: 'priya_patel', brand: 'brand_3', earning: 60 },
+    { userId: 'rohan_verma', brand: 'brand_1', earning: 200 },
+    { userId: 'rohan_verma', brand: 'brand_2', earning: 150 },
   ];
 
   const insertSale = db.prepare(`
