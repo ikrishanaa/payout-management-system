@@ -1,0 +1,215 @@
+{
+  "info": {
+    "name": "Payout Management System",
+    "description": "API collection for the Payout Management System SDE Intern Assignment.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Sales",
+      "item": [
+        {
+          "name": "Create a Sale",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userId\": \"user_123\",\n  \"brandId\": \"brand_abc\",\n  \"earning\": 100\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/sales",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "sales"]
+            }
+          }
+        },
+        {
+          "name": "List All Sales",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/sales",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "sales"]
+            }
+          }
+        },
+        {
+          "name": "Get Sales for a User",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/sales/user/user_123",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "sales", "user", "user_123"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Advance Payouts",
+      "item": [
+        {
+          "name": "Process Global Advance Job",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/advance/process",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "advance", "process"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Reconciliation",
+      "item": [
+        {
+          "name": "Reconcile a Sale",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"saleId\": \"<insert_sale_id>\",\n  \"status\": \"approved\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/reconciliation/sale",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "reconciliation", "sale"]
+            }
+          }
+        },
+        {
+          "name": "Get Reconciliation Summary",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/reconciliation/summary/user_123",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "reconciliation", "summary", "user_123"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Withdrawals & Payouts",
+      "item": [
+        {
+          "name": "Initiate Withdrawal",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userId\": \"user_123\",\n  \"amount\": 50\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/payouts/withdraw",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "payouts", "withdraw"]
+            }
+          }
+        },
+        {
+          "name": "Get User Withdrawal History",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/payouts/user/user_123",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "payouts", "user", "user_123"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Balances & Transactions",
+      "item": [
+        {
+          "name": "Get User Balance",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/balance/user_123",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "balance", "user_123"]
+            }
+          }
+        },
+        {
+          "name": "Get User Transaction History",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/balance/user_123/transactions",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "balance", "user_123", "transactions"]
+            }
+          }
+        },
+        {
+          "name": "Verify Balance Consistency",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/balance/user_123/verify",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "balance", "user_123", "verify"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
