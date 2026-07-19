@@ -9,6 +9,7 @@ Built with **JavaScript (Node.js)**, **Express.js**, and **SQLite**.
 ## Table of Contents
 
 - [Overview](#overview)
+- [Screenshots](#screenshots)
 - [Architecture](#architecture)
 - [Database Schema](#database-schema)
 - [API Reference](#api-reference)
@@ -45,6 +46,29 @@ After reconciliation (1 rejected, 2 approved):
 
 Final Payout = -₹4 + ₹36 + ₹36 = ₹68
 ```
+
+---
+
+## Screenshots
+
+<details>
+<summary>Click to view screenshots</summary>
+
+### Dashboard Overview
+![Dashboard 1](screenshots/dashboard-1.png)
+
+### Sale Processing
+![Dashboard 2](screenshots/dashboard-2.png)
+![Dashboard 3](screenshots/dashboard-3.png)
+
+### Reconciliation
+![Dashboard 4](screenshots/dashboard-4.png)
+![Dashboard 5](screenshots/dashboard-5.png)
+
+### Withdrawal & Audit Log
+![Dashboard 6](screenshots/dashboard-6.png)
+
+</details>
 
 ---
 
